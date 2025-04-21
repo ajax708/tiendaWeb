@@ -1,7 +1,11 @@
 #!/bin/bash
-# Copia tu config personalizada sobre la que usa nginx por defecto
-cp /home/site/nginx-default /etc/nginx/sites-available/default
-cp /home/site/nginx-default /etc/nginx/sites-enabled/default
+# 1) Elimina la página por defecto que vuelve a crearse
+rm -f /home/site/wwwroot/hostingstart.html
+rm -f /home/site/wwwroot/hostingstart.html.bk
 
-# Recarga nginx para aplicar los cambios
+# 2) Copia tu nginx-default apuntando a public/
+cp /home/site/wwwroot/nginx-default /etc/nginx/sites-available/default
+cp /home/site/wwwroot/nginx-default /etc/nginx/sites-enabled/default
+
+# 3) Recarga nginx
 service nginx reload
