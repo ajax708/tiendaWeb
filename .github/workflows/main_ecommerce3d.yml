@@ -18,6 +18,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Make startup script executable
+        run: chmod +x ./startup.sh
+        
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
@@ -71,3 +74,4 @@ jobs:
           slot-name: 'Production'
           package: .
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E3806A667B01438FBBA0BD601FCB81E6 }}
+          clean: true
