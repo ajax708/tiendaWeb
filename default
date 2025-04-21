@@ -2,21 +2,16 @@ server {
     listen       80 default_server;
     listen  [::]:80 default_server;
 
-    # Apunta a tu carpeta public/
+    # Punto de entrada de Laravel
     root   /home/site/wwwroot/public;
     index  index.php index.html;
 
     server_name _;
 
-    # Evita listar directorios
-    autoindex off;
-
-    # Manejo de peticiones normales
     location / {
         try_files $uri $uri/ /index.php?$query_string;
     }
 
-    # Procesa .php con PHP‑FPM
     location ~ \.php$ {
         fastcgi_pass   unix:/var/run/php-fpm.sock;
         fastcgi_index  index.php;
@@ -24,6 +19,5 @@ server {
         fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
     }
 
-    # Otras directivas recomendadas…
     client_max_body_size 50M;
 }
