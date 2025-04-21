@@ -1,31 +1,48 @@
+# Dependencias
 /vendor/
-node_modules/
+/node_modules/
+
+# Logs de Node
 npm-debug.log
 yarn-error.log
 
-# Laravel 4 specific
+# Laravel 4 específico
 bootstrap/compiled.php
 app/storage/
 
-# Laravel 5 & Lumen specific
+# Laravel 5 & Lumen específico
 public/storage
 public/hot
-
-# Laravel 5 & Lumen specific with changed public path
 public_html/storage
 public_html/hot
 
-storage/*.key
+# Entorno y configuración
 .env
 Homestead.yaml
 Homestead.json
 /.vagrant
 .phpunit.result.cache
 
-# Ignore log files and databases
+# Ignorar logs de Laravel
 /storage/logs/*.log
-/storage/framework/cache/data/*
+
+# Ignorar todo el storage…
+/storage/*
+# …excepto este .gitignore
+!/storage/.gitignore
+
+# Framework cache, sessions y views
+/storage/framework/*
+!/storage/framework/cache
+/storage/framework/cache/*
+!/storage/framework/cache/.gitkeep
+!/storage/framework/sessions
 /storage/framework/sessions/*
-/storage/framework/testing/*
+!/storage/framework/sessions/.gitkeep
+!/storage/framework/views
 /storage/framework/views/*
-storage/*
+!/storage/framework/views/.gitkeep
+
+# Cache de bootstrap
+/bootstrap/cache/*
+!/bootstrap/cache/.gitkeep
