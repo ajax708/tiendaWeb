@@ -28,10 +28,9 @@ Homestead.json
 
 # Ignorar todo el storage…
 /storage/*
-# …excepto este .gitignore
-!/storage/.gitignore
 
-# Framework cache, sessions y views
+# …pero no los .gitkeep de framework/cache, sessions y views
+!/storage/framework
 /storage/framework/*
 !/storage/framework/cache
 /storage/framework/cache/*
@@ -43,6 +42,6 @@ Homestead.json
 /storage/framework/views/*
 !/storage/framework/views/.gitkeep
 
-# Cache de bootstrap
+# Ignorar bootstrap cache…  
 /bootstrap/cache/*
 !/bootstrap/cache/.gitkeep
