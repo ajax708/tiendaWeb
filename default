@@ -1,8 +1,7 @@
 server {
-    listen       80 default_server;
-    listen  [::]:80 default_server;
+    listen       8080 default_server;
+    listen  [::]:8080 default_server;
 
-    # Punto de entrada de Laravel
     root   /home/site/wwwroot/public;
     index  index.php index.html;
 
