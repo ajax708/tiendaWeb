@@ -14,7 +14,7 @@
 
             <div class="lg:w- bg-white dark:bg-gray-800 p-10 lg:rounded-r-lg md:ml-auto">
                 <img class="mx-auto  items-center justify-center" src="{{ asset('img/logo.png') }}" width="102" alt="">
-                <h2 class="font-semibold text-center text-2xl py-3">Bienvenido!!</h2>
+                <h2 class="font-semibold text-center text-2xl py-3">Bienvenido a la app!!</h2>
                 <!--Verificación de la validación de inicio de sesión-->
                 <x-validation-errors class="mb-2" />
                 @if (session('status'))
