@@ -52,12 +52,13 @@ jobs:
           php-version: '8.1'
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress
-      - name: Run basic tests
+      - name: Run selected tests
         run: |
-          # Ejecuta ambos tests de demostración
-          ./vendor/bin/phpunit tests/DemoTest.php tests/SecondDemoTest.php
-          # —o— usar comodín:
-          # ./vendor/bin/phpunit tests/*.php
+          ./vendor/bin/phpunit \
+            tests/DemoTest.php \
+            tests/SecondDemoTest.php \
+            tests/Feature/UserModelTest.php
+
     
   deploy:
     runs-on: ubuntu-latest
